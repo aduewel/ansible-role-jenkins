@@ -41,9 +41,12 @@ Default admin password file which will be created the first time Jenkins is inst
 
 The location at which the `jenkins-cli.jar` jarfile will be kept. This is used for communicating with Jenkins via the CLI.
 
-    jenkins_plugins: []
+    jenkins_plugins:
+      - git
+      - name: ldap
+        version: '1.20'
 
-Jenkins plugins to be installed automatically during provisioning.
+Jenkins plugins to be installed automatically during provisioning, could be a list or a list of objects with the keys `name` and `version`.
 
     jenkins_plugins_install_dependencies: true
 
