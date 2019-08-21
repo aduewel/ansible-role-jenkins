@@ -6,7 +6,7 @@ Installs Jenkins CI on RHEL/CentOS and Debian/Ubuntu servers.
 
 ## Requirements
 
-Requires `curl` to be installed on the server. Also, newer versions of Jenkins require Java 8+ (see the test playbooks inside the `tests/` directory for an example of how to use newer versions of Java for your OS).
+Requires `curl` to be installed on the server. Also, newer versions of Jenkins require Java 8+ (see the test playbooks inside the `molecule/default` directory for an example of how to use newer versions of Java for your OS).
 
 ## Role Variables
 
@@ -59,6 +59,10 @@ Use `latest` to ensure all plugins are running the most up-to-date version.
     jenkins_plugin_updates_expiration: 86400
 
 Number of seconds after which a new copy of the update-center.json file is downloaded. Set it to 0 if no cache file should be used.
+
+    jenkins_updates_url: "https://updates.jenkins.io"
+
+The URL to use for Jenkins plugin updates and update-center information.
 
     jenkins_plugin_timeout: 30
 
